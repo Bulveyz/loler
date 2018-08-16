@@ -46,8 +46,23 @@ html, body {
 }
 
 .el-slider__bar,
-.el-radio__input.is-checked .el-radio__inner {
+.el-radio__input.is-checked .el-radio__inner,
+.el-notification {
     background-color: #62caa8 !important;
+}
+
+.el-notification {
+    width: 365px !important;
+    border: 0 !important;
+}
+
+.el-notification__content p {
+    font-size: 18px !important;
+}
+
+.el-notification__content p,
+.el-notification__title {
+    color: #fff !important;
 }
 
 .el-slider__button,

@@ -6,10 +6,10 @@
 
         <!-- Results Sections -->
         <div class="sort-results">
-            <b-card-group columns>
+            <b-card-group columns class="row">
 
                 <!-- Card Item -->
-                <product :key="index" v-for="(item, index) in items" :data="item"></product>
+                <product class="col-lg-4" :key="index" v-for="(item, index) in items" :data="item"></product>
 
             </b-card-group>
         </div>

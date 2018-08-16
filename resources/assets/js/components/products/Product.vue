@@ -1,5 +1,5 @@
 <template>
-    <b-card class="shadow"
+    <b-card class="border-0"
             :title="data.title"
             :img-src="data.image"
             img-fluid
@@ -8,7 +8,7 @@
         <!-- Card Body -->
         <div>
             <!-- Badges -->
-            <div class="d-flex flex-row mb-3">
+            <div class="d-flex flex-row flex-wrap mb-3">
                 <b-badge pill class="mr-2" :href="'restoraunt/' + data.restoraunt_id">
                     {{data.restoraunt.brand}}
                 </b-badge>
@@ -47,6 +47,23 @@
         })
             .then(response => {
               Event.fire('addToCart');
+
+              const h = this.$createElement;
+
+              this.$notify({
+                title: 'Success!',
+                message: h('p', 'The item is added to cart')
+              });
+            })
+            .catch(errors => {
+              if (errors.response.data.message == 'Unauthenticated.') {
+                const h = this.$createElement;
+
+                this.$notify({
+                  title: 'Unauthenticated',
+                  message: h('p', 'Log in to add an item to your cart')
+                });
+              }
             })
       }
     }

@@ -11,6 +11,11 @@ use function Sodium\increment;
 class CartController extends Controller
 {
 
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+
   // Add Product
   public function store(Request $request)
   {

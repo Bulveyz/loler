@@ -1,6 +1,6 @@
 <template>
     <div class="sort-panel row mb-5 mt-5">
-        <div class="col-4">
+        <div class="col-lg-4">
             <!-- Price -->
             <div class="form-group">
                 <h5>Price</h5>
@@ -14,7 +14,7 @@
             <!-- End Price -->
         </div>
 
-        <div class="col-6">
+        <div class="col-lg-6">
             <!-- Brand Select -->
             <div class="form-group">
                 <h5>Brand</h5>
@@ -35,7 +35,7 @@
             <!--End Brand Select -->
         </div>
 
-        <div class="col-2">
+        <div class="col-lg-2">
             <!-- Rate Filter -->
             <h5>Popular</h5>
             <div class="mb-4">

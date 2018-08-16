@@ -26,3 +26,6 @@ Route::get('/logout', function () {
    session()->flush();
    return redirect('/');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

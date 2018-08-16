@@ -113322,7 +113322,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "sort-panel row mb-5 mt-5" }, [
-    _c("div", { staticClass: "col-4" }, [
+    _c("div", { staticClass: "col-lg-4" }, [
       _c(
         "div",
         { staticClass: "form-group" },
@@ -113354,7 +113354,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-6" }, [
+    _c("div", { staticClass: "col-lg-6" }, [
       _c(
         "div",
         { staticClass: "form-group" },
@@ -113490,7 +113490,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-2" }, [
+    _c("div", { staticClass: "col-lg-2" }, [
       _c("h5", [_vm._v("Popular")]),
       _vm._v(" "),
       _c(
@@ -113635,7 +113635,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -113691,10 +113691,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     addToCart: function addToCart(product) {
+      var _this = this;
+
       axios.post('/cart/store', {
         product_id: product
       }).then(function (response) {
         Event.fire('addToCart');
+
+        var h = _this.$createElement;
+
+        _this.$notify({
+          title: 'Success!',
+          message: h('p', 'The item is added to cart')
+        });
+      }).catch(function (errors) {
+        if (errors.response.data.message == 'Unauthenticated.') {
+          var h = _this.$createElement;
+
+          _this.$notify({
+            title: 'Unauthenticated',
+            message: h('p', 'Log in to add an item to your cart')
+          });
+        }
       });
     }
   }
@@ -113711,7 +113729,7 @@ var render = function() {
   return _c(
     "b-card",
     {
-      staticClass: "shadow",
+      staticClass: "border-0",
       attrs: {
         title: _vm.data.title,
         "img-src": _vm.data.image,
@@ -113724,7 +113742,7 @@ var render = function() {
       _c("div", [
         _c(
           "div",
-          { staticClass: "d-flex flex-row mb-3" },
+          { staticClass: "d-flex flex-row flex-wrap mb-3" },
           [
             _c(
               "b-badge",
@@ -113830,9 +113848,13 @@ var render = function() {
         [
           _c(
             "b-card-group",
-            { attrs: { columns: "" } },
+            { staticClass: "row", attrs: { columns: "" } },
             _vm._l(_vm.items, function(item, index) {
-              return _c("product", { key: index, attrs: { data: item } })
+              return _c("product", {
+                key: index,
+                staticClass: "col-lg-4",
+                attrs: { data: item }
+              })
             })
           )
         ],
