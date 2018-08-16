@@ -1,0 +1,62 @@
+html, body {
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 0.05em;
+    font-size: 18px;
+    color: #333;
+}
+
+.inputx, .input-span-placeholder {
+    font-size: 18px !important;
+}
+
+.opera input[type="password"],
+.webkit input[type="password"] {
+    font: large Verdana, sans-serif !important;
+    letter-spacing: 1px !important;
+}
+
+.form-control {
+    letter-spacing: 0.05em !important;
+}
+
+.form-control:focus {
+    border-color: #62caa8;
+}
+
+.dropdown-menu {
+    border-color: #62caa8;
+}
+
+.cart-menu .dropdown-menu {
+    min-width: 420px !important;
+}
+
+.vb > .vb-dragger > .vb-dragger-styler {
+    background-color: #62caa8 !important;
+}
+
+.bulveyz-select-list-item.active,
+.el-radio__input.is-checked+.el-radio__label {
+    color: #62caa8 !important;
+}
+
+.bulveyz-select-list-item:hover {
+    background-color: rgba(98, 202, 168, 0.17) !important;
+    color: #62caa8 !important;
+}
+
+.el-slider__bar,
+.el-radio__input.is-checked .el-radio__inner {
+    background-color: #62caa8 !important;
+}
+
+.el-slider__button,
+.el-radio__input.is-checked .el-radio__inner,
+.el-radio__inner:hover
+{
+    border-color: #62caa8 !important;
+}
+
+.cart-menu-item:not(:last-child) {
+    margin-bottom: 40px;
+}
